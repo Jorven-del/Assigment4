@@ -7,4 +7,5 @@ add_executable(Assigment4 main.cpp
         Patient.h
         Doctor.h
         Patient.cpp
+        Doctor.cpp
 )
