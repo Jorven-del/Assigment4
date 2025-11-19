@@ -1,4 +1,6 @@
 #include "Hospital.h"
+#include "Patient.h"
+#include "Doctor.h"
 #include <iostream>
 using namespace std;
 
@@ -66,8 +68,16 @@ Hospital::Hospital() {
     }
 }
 
-void findOldestPatient() {
-
+void Hospital::findOldestPatient() {
+    int oldestPatient;
+    long int brthday = 99999999;
+    (*pointerPatients)[0].Print_Patient_Info();
+    for (int i = 0; i < pointerPatients->size(); i++) {
+        if (stol((*pointerPatients)[i].get_birthday()) < brthday) {
+            oldestPatient = i;
+        }
+    }
+    (*pointerPatients)[oldestPatient].Print_Patient_Info();
 }
 
 
