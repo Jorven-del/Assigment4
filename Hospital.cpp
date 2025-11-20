@@ -8,7 +8,11 @@ Hospital::Hospital() {
     pointerPatients = new vector<Patient>;
     pointerDoctors = new vector<Doctor>;
 
-    ifstream patientFile ("patients.txt");
+    ifstream patientFile ("/Patients.txt");
+    if (!patientFile.is_open()) {
+        cerr << "ERROR: Cannot open Doctors.txt. Doctor data will be empty.\n";
+        return;
+    }
     int numberOfPatients;
     patientFile >> numberOfPatients;
 
@@ -40,7 +44,7 @@ Hospital::Hospital() {
     }
 
 
-    ifstream doctorFile ("doctors.txt");
+    ifstream doctorFile ("Doctors.txt");
     int numberOfDoctors;
     doctorFile >> numberOfDoctors;
 
