@@ -1,3 +1,9 @@
+//============================================================================
+// Names       : -
+// Assignment  : 4
+// File        : Patient.h
+//============================================================================
+
 #ifndef ASSIGMENT4_HEAD_H
 #define ASSIGMENT4_HEAD_H
 #include <iostream>
@@ -5,7 +11,11 @@ using namespace std;
 
 class Patient {
 public:
-    // setters
+    // Constructors
+    Patient();
+    Patient(string, string, long int, long int, string, string, string, string, string);
+
+    // Setters
     void set_firstName(string a);
     void set_lastName(string a);
     void set_id(long int a);
@@ -17,21 +27,23 @@ public:
     void set_dischargeDate(string a);
 
     // Getters
-    string get_firstName();
-    string get_lastName();
-    long int get_id();
-    long int get_doctor();
-    string get_birthday();
-    string get_bloodType();
-    string get_diagn();
-    string get_admissionDate();
-    string get_dischargeDate();
+    string get_firstName() const;
+    string get_lastName() const;
+    long int get_id() const;
+    long int get_doctor() const;
+    string get_birthday() const;
+    string get_bloodType() const;
+    string get_diagn() const;
+    string get_admissionDate() const;
+    string get_dischargeDate() const;
 
-    bool IsDischarged();
-    string Patient_Status();
+    // Member functions
+    bool IsDischarged() const;
+    string Patient_Status() const;
     void Print_Patient_Info();
 
 private:
+    // Attributes
     string firstName;
     string lastName;
     long int id;

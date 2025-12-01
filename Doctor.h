@@ -1,3 +1,9 @@
+//============================================================================
+// Names       : -
+// Assignment  : 4
+// File        : Doctor.h
+//============================================================================
+
 #ifndef ASSIGMENT4_DOCTOR_H
 #define ASSIGMENT4_DOCTOR_H
 #include <iostream>
@@ -5,7 +11,11 @@ using namespace std;
 
 class Doctor {
 public:
-    //setters
+    // Constructors
+    Doctor();
+    Doctor(string, string, long int, string, int, long double, long double);
+
+    // Setters
     void set_firstName(string a);
     void set_lastName(string a);
     void set_id(long int a);
@@ -14,19 +24,21 @@ public:
     void set_baseSalary(long double a);
     void set_performanceBonus(long double a);
 
-    //getters
-    string get_firstName();
-    string get_lastName();
-    long int get_id();
-    string get_specialty();
-    int get_yearsExperience();
-    long double get_baseSalary();
-    long double get_performanceBonus();
+    // Getters
+    string get_firstName() const;
+    string get_lastName() const;
+    long int get_id() const;
+    string get_specialty() const;
+    int get_yearsExperience() const;
+    long double get_baseSalary() const;
+    long double get_performanceBonus() const;
 
-    long double calculateCompensation(long double baseSalary, long double performanceBonus);
+    // Member functions
+    long double Calculate_Compensation() const;
     void Print_Doctor_Info();
 
 private:
+    // Attributes
     string firstName;
     string lastName;
     long int id;
